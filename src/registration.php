@@ -4,7 +4,7 @@
 
 add_filter('gutenberg_forms_integrations', function( $integrations ) {
 
-    $akismet_plugin_exist = false;
+    $akismet_api_exist = cwp_gf_addon_Akismet::exist();
     $guide = plugin_dir_path( __FILE__ ) . 'guide/guide.html';
 
     $configurations = array(
@@ -41,7 +41,7 @@ add_filter('gutenberg_forms_integrations', function( $integrations ) {
     ); 
 
 
-    if (!$akismet_plugin_exist) {
+    if (!$akismet_api_exist) {
         # if the user does not have akismet plugin 
         # disabling the integration by adding some options
         # & showing a notice prompting to install Akismet plugin
@@ -51,11 +51,10 @@ add_filter('gutenberg_forms_integrations', function( $integrations ) {
         $configurations['is_disabled'] = true; // disabling the integration
         $configurations['error'] = array(
             'status'    => 'error',
-            'message'   => sprintf('Unable to access Akismet API please make sure that <a href="%1$s" target="__blank">Akismet Plugin</a> is installed & active before activating Akismet Addon', $plugin_repo_url)
+            'message'   => sprintf('Unable to access Akismet API please make sure that <a href="%1$s" target="__blank">Akismet Plugin</a> is installed/configured & activated with the API KEY before activating Akismet Addon', $plugin_repo_url)
         );
         
     }
-
 
     $integrations['akismet'] = $configurations;
 
