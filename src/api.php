@@ -13,19 +13,35 @@ class cwp_gf_addon_Akismet
     /**
      * Will check if the api of akismet exist and can be utilized
      * @return bool [existence of the Akismet Api]
-     * 
+     *
      */
 
     public static function exist(): bool
     {
 
         $akismet_post_existence = function_exists('akismet_http_post');
-        return $akismet_post_existence;
+        $akismet_verification_key_existence = function_exists( 'akismet_verify_key' );
+        $akismet_get_key_existence = function_exists('akismet_get_key');
+
+
+        # checking akismet functions existence & verifying the currently active key
+        # in akismet
+
+        if ( $akismet_post_existence and $akismet_verification_key_existence and $akismet_get_key_existence ) {
+            $test = akismet_verify_key( akismet_get_key() );
+
+            if ( $test === 'valid' ) {
+                return true;
+            }
+
+        }
+
+        return false;
     }
 
     /**
      * @param string {id} The id of the field which value is required
-     * @return value [can be of any type depending on the value] 
+     * @return value [can be of any type depending on the value]
      */
 
     public function field(string $id)
@@ -39,17 +55,19 @@ class cwp_gf_addon_Akismet
 
     /**
      * Test the given entry and mark as ( VALID OR INVALID )
-     * @return string Possible return values are ['spam', 'error', 'success'] 
+     * @return string Possible return values are ['spam', 'error', 'success']
      */
 
     public function test(): string
     {
 
-        if (!$this->is_enabled)
-            return 'error'; # skipping the test if the integration is disabled from the backend
+        if (!$this->is_enabled) {
+            return 'success'; # skipping the test if the integration is disabled from the backend
+        }
 
-        if (!self::exist())
-            return 'spam'; # unable to find akismet api therefore stopping further execution
+        if (!self::exist()) {
+            return 'error'; # unable to find akismet api therefore stopping further execution
+        }
 
         global $akismet_api_host, $akismet_api_port; # some akismet globals
 
