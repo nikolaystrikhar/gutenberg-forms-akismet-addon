@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Gutenberg Forms - Akismet Add-on
+ * Plugin Name: Guten Forms Akismet
  * Plugin URI: https://www.gutenbergforms.com
- * Description: This add-on connects Gutenberg Forms with MailPoet. This allows you to send leads/subscribers to your MailPoet list with the form submissions.
+ * Description: Akismet add-on for Gutenberg Forms. Connect with Akismet and protect your form submissions against spam via their global database of spam.
  * Author: munirkamal
  * Author URI: https://cakewp.com/
  * Version: 1.0.0

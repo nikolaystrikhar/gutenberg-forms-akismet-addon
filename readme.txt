@@ -1,4 +1,4 @@
-=== Guten Forms Akismet ===
+=== Gutenberg Forms Add-on for Akismet ===
 Contributors: munirkamal
 Tags: akismet, wordpress form,  gutenberg form, contact form, gutenberg block, contact form plugin, forms, form builder, custom form, contact button, contact me, custom contact form, form manager, form, forms builder, forms creator, captcha, recaptcha, Akismet, email form, web form, feedback form, email submit form, message form, contact form block, wordpress form plugin
 Requires at least: 5.0
@@ -62,5 +62,5 @@ You may also get involved with the development via Github:
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.0 (25 July 2020)=
 * Initial release.

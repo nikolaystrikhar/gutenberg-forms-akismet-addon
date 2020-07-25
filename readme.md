@@ -1,8 +1,11 @@
 # Akismet Add-on for Gutenberg Forms
 
+[![WordPress plugin](https://img.shields.io/wordpress/plugin/dt/guten-forms-akismet.svg?style=flat)](https://wordpress.org/plugins/guten-forms-akismet/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/guten-forms-akismet.svg?style=flat)](https://wordpress.org/plugins/guten-forms-akismet/) [![WordPress](https://img.shields.io/wordpress/v/guten-forms-akismet.svg?style=flat)]() [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://github.com/munirkamal/guten-forms-akismet/blob/master/LICENSE)
+
+
 Akismet add-on for [Gutenberg Forms](https://wordpress.org/plugins/forms-gutenberg/). Connect with Akismet and protect your form submissions against spam via their global database of spam.
 
-
+[![Akismet Add-on for Gutenberg Forms](https://ps.w.org/guten-forms-akismet/assets/banner-1544x500.png)](https://wordpress.org/plugins/guten-forms-akismet/)
 
 ## Description
 
